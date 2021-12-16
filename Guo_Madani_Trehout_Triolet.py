@@ -28,7 +28,15 @@ def extrait_ensemble_des_voyelles(mot):
 
 
 def transforme_en_numeros(mot):
-    pass
+    li=[]
+    for i in mot:
+        if i >='a' and i<='z':
+            i=ord(i)-96
+            
+        li.append(str(i))
+        li.append('.')
+    return ''.join(li)
+
 
 #------------------------------------------------------------------------------
 #                               JEU DE LA VIE
