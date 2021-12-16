@@ -13,6 +13,7 @@ def extrait_ensemble_des_voyelles(mot):
     """ Fonction prenant en entrée un mot (chaîne de caratères)
         et renvoyant l'ensemble des voyelles minuscules présente
         dans celui-ci"""
+    
     set_voyelle = set(["a", "e", "i", "u", "o", "y"])
     voyelles_mot = set()
     for s in mot:
@@ -70,7 +71,28 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
 
 
 def prochain_univers(univers):
-    pass
+    """ Fonction qui prend en entrée un univers
+        et qui calcule et renvoi l'univers qui 
+        suivra """
+
+    univers_suivant = ["" for k in range(len(univers))]
+    for ligne in range(len(univers)):
+        for colonne in range(len(ligne)):
+        # cellule non vivante devient vivante si 3 voisins vivants exactement
+            if nombre_cases_vivantes_voisines(colonne, ligne, univers) == 3:
+                if univers[ligne][colonne] == "_":
+                    univers_suivant[ligne] += "*"
+        # cellule  vivante meurt si nombres de voisins différents de 2 ou 3
+            elif nombre_cases_vivantes_voisines(colonne, ligne, univers)\
+            not in [2,3]:
+                if univers[ligne][colonne] == "*":
+                    univers_suivant[ligne] += "_"
+        # état de la cellule conservé sinon
+            else:
+                univers_suivant[ligne] += univers[ligne][colonne]
+    
+    return univers_suivant
+
 
 def iter_univers(univers):
     pass
