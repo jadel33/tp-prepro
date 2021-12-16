@@ -43,15 +43,18 @@ def transforme_en_numeros(mot):
 
 
 def contenu_cellule(colonne, ligne, univers):
-    pass
+    return univers[ligne][colonne]
+
 
 
 def est_vivante(colonne, ligne, univers):
-    pass
+    return contenu_cellule(colonne, ligne, univers) == "*"
+
 
 
 def largeur(univers):
-    pass
+    return len(univers)
+
 
 
 def nombre_cases_vivantes_voisines(colonne, ligne, univers):
