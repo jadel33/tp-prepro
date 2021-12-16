@@ -10,6 +10,9 @@
 
 
 def extrait_ensemble_des_voyelles(mot):
+    """ Fonction prenant en entrée un mot (chaîne de caratères)
+        et renvoyant l'ensemble des voyelles minuscules présente
+        dans celui-ci"""
     set_voyelle = set("a", "e", "i", "u", "o", "y")
     voyelles_mot = set()
     for s in mot:
