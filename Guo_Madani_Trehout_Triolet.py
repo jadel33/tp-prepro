@@ -72,7 +72,34 @@ def largeur(univers):
 def nombre_cases_vivantes_voisines(colonne, ligne, univers):
     """ Fonction qui renoit ne nombre de voisins vivants
         d'une case donnée """
-    pass
+
+    nombre_voisins = 0
+    n = largeur(univers)
+
+    # création d'un univers auxiliaire de taille
+    # n + 2, afin d'étendre l'original 
+    # d'une ligne et colonne au-dessus, et 
+    # d'une ligne et d'une colonne en dessous afin de
+    # faciliter le traitement du nombres de voisins
+    # lors d'un passage sur une case dite "au bord"
+    univers_auxiliaire = ["" for k in range(n)]
+
+    for line in range(n):
+        ligne_originale = univers[line]
+        univers_auxiliaire[line] = "|" + ligne_originale + "|"
+    
+    univers_auxiliaire.insert(0, "|"*(n+2))
+    univers_auxiliaire.insert(n+1, "|"*(n+2))
+    
+    # traitement
+    for i in range(ligne, ligne + 3):
+            for j in range(colonne, colonne + 3):
+                case = contenu_cellule(j, i, univers_auxiliaire)
+                if i != ligne or j != colonne and case != "|":
+                    if est_vivante(j, i, univers_auxiliaire):
+                        nombre_voisins += 1
+    
+    return nombre_voisins
 
 
 def prochain_univers(univers):
@@ -80,9 +107,11 @@ def prochain_univers(univers):
         et qui calcule et renvoi l'univers qui 
         suivra """
 
-    univers_suivant = ["" for k in range(len(univers))]
-    for ligne in range(len(univers)):
-        for colonne in range(len(ligne)):
+    taille = largeur(univers)
+
+    univers_suivant = ["" for k in range(taille)]
+    for ligne in range(taille):
+        for colonne in range(taille):
         # cellule non vivante devient vivante si 3 voisins vivants exactement
             if nombre_cases_vivantes_voisines(colonne, ligne, univers) == 3:
                 if univers[ligne][colonne] == "_":
@@ -150,7 +179,7 @@ if nombre_cases_vivantes_voisines(4, 0, univers_2) != 0:
     print("Erreur nombre_cases_vivantes_voisines(4, 0, univers_2)")
 
 if nombre_cases_vivantes_voisines(2, 3, univers_2) != 5:
-    print("Erreur nombre_cases_vivantes_voisines(2, 3, univers_2))")
+    print("Erreur nombre_cases_vivantes_voisines(2, 3, univers_2)")
 
 univ_2 = univers_1
 for _ in range(8):
