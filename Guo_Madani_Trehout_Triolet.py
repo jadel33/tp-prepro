@@ -45,7 +45,8 @@ def est_vivante(colonne, ligne, univers):
 
 
 def largeur(univers):
-    pass
+    return len(univers)
+
 
 
 def nombre_cases_vivantes_voisines(colonne, ligne, univers):
