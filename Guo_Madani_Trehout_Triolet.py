@@ -38,10 +38,10 @@ def transforme_en_numeros(mot):
     for s in mot:
         if mot.index(s) != len(mot)-1:
             position = ord(s) - 96
-            chaine_position = chaine_position + str(position) + "."
+            chaine_position += str(position) + "."
         else:
             position = ord(s) - 96
-            chaine_position = chaine_position + str(position)
+            chaine_position += str(position)
     
     return chaine_position
 
