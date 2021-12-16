@@ -1,6 +1,8 @@
 # Indiquez ici les NOMS, Prénoms des membres de l'équipe :
-#
-#
+#   GUO Yue
+#   MADANI Abdenour
+#   TREHOUT Coline
+#   TRIOLET Hugo
 
 
 #------------------------------------------------------------------------------
@@ -8,7 +10,14 @@
 
 
 def extrait_ensemble_des_voyelles(mot):
-    pass
+    set_voyelle = set("a", "e", "i", "u", "o", "y")
+    voyelles_mot = set()
+    for s in mot:
+        if s in set_voyelle:
+            voyelles_mot.add(s)
+    
+    return voyelles_mot
+            
 
 
 #------------------------------------------------------------------------------
