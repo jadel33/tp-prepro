@@ -11,8 +11,8 @@
 
 def extrait_ensemble_des_voyelles(mot):
     """ Fonction prenant en entrée un mot (chaîne de caratères)
-        et renvoyant l'ensemble des voyelles minuscules présente
-        dans celui-ci"""
+        et renvoyant l'ensemble des voyelles minuscules présentes
+        dans celui-ci. """
     
     set_voyelle = set(["a", "e", "i", "u", "o", "y"])
     voyelles_mot = set()
@@ -30,10 +30,10 @@ def extrait_ensemble_des_voyelles(mot):
 
 def transforme_en_numeros(mot):
     """ Fonction qui, à partir d'une chaîne de caractères
-        renvoi cette même chaîne où chaque lettre est 
-        convertit en son numéro de positionnement dans 
-        l'alphabet latin (du moins celui en vigueur en France),
-        chacun séparer par un point """
+        renvoie cette même chaîne où chaque lettre est 
+        convertie en sa position dans l'alphabet latin 
+        (du moins celui en vigueur en France),
+        chacune séparée par un point. """
 
     chaine_position = ""
     for s in mot:
@@ -52,19 +52,19 @@ def transforme_en_numeros(mot):
 
 
 def contenu_cellule(colonne, ligne, univers):
-    """ Fonction qui renvoit le contenu d'une cellule """
+    """ Fonction qui renvoie le contenu d'une cellule. """
     return univers[ligne][colonne]
 
 
 
 def est_vivante(colonne, ligne, univers):
-    """ Fonction booléene qui vérifie si une cellule est en vie """
+    """ Fonction booléene qui vérifie si une cellule est en vie. """
     return contenu_cellule(colonne, ligne, univers) == "*"
 
 
 
 def largeur(univers):
-    """ Fonction qui renvoit la largeur de l'univers """
+    """ Fonction qui renvoie la largeur de l'univers. """
     return len(univers)
 
 
@@ -106,7 +106,7 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
 
 def prochain_univers(univers, DEBUG=False):
     """ Fonction qui prend en entrée un univers
-        et qui calcule et renvoi l'univers qui 
+        et qui calcule et renvoie l'univers qui 
         suivra """
 
     taille = largeur(univers)
