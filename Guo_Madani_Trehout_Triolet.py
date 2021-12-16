@@ -21,14 +21,31 @@ def extrait_ensemble_des_voyelles(mot):
     
     return voyelles_mot
 
-    
+
 
 #------------------------------------------------------------------------------
 #                               Transforme en numéros
 
 
 def transforme_en_numeros(mot):
-    pass
+    """ Fonction qui, à partir d'une chaîne de caractères
+        renvoi cette même chaîne où chaque lettre est 
+        convertit en son numéro de positionnement dans 
+        l'alphabet latin (du moins celui en vigueur en France),
+        chacun séparer par un point """
+
+    chaine_position = ""
+    for s in mot:
+        if mot.index(s) != len(mot)-1:
+            position = ord(s) - 96
+            chaine_position = chaine_position + str(position) + "."
+        else:
+            position = ord(s) - 96
+            chaine_position = chaine_position + str(position)
+    
+    return chaine_position
+
+
 
 #------------------------------------------------------------------------------
 #                               JEU DE LA VIE
