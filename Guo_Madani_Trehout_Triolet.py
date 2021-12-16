@@ -70,6 +70,8 @@ def largeur(univers):
 
 
 def nombre_cases_vivantes_voisines(colonne, ligne, univers):
+    """ Fonction qui renoit ne nombre de voisins vivants
+        d'une case donnée """
     pass
 
 
