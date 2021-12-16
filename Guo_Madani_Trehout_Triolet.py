@@ -52,16 +52,19 @@ def transforme_en_numeros(mot):
 
 
 def contenu_cellule(colonne, ligne, univers):
+    """ Fonction qui renvoit le contenu d'une cellule """
     return univers[ligne][colonne]
 
 
 
 def est_vivante(colonne, ligne, univers):
+    """ Fonction booléene qui vérifie si une cellule est en vie """
     return contenu_cellule(colonne, ligne, univers) == "*"
 
 
 
 def largeur(univers):
+    """ Fonction qui renvoit la largeur de l'univers """
     return len(univers)
 
 
