@@ -137,7 +137,18 @@ def prochain_univers(univers, DEBUG=False):
 
 
 def iter_univers(univers):
-    pass
+    """ Fonction qui prend en entrée un univers et 
+        qui retourne un itérateur permettant de 
+        générer les univers suivants les uns après 
+        les autres, avec en premier l'univers initial"""
+
+    univers_suivant = univers
+    yield univers_suivant
+
+    while True:
+        univers_suivant = prochain_univers(univers_suivant, DEBUG=False)
+        yield univers_suivant
+
 
 #------------------------------------------------------------------------------
 #                               TESTS : ne rien modifier dans ce qui suit
