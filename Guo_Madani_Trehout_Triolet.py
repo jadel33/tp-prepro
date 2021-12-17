@@ -137,14 +137,9 @@ def iter_univers(univers):
         qui retourne un itérateur permettant de 
         générer les univers suivants les uns après 
         les autres, avec en premier l'univers initial"""
-
-    univers_suivant = univers
-    yield univers_suivant
-
     while True:
-        univers_suivant = prochain_univers(univers_suivant)
-        yield univers_suivant
-
+        yield univers
+        univers = prochain_univers(univers)
 
 #------------------------------------------------------------------------------
 #                               TESTS : ne rien modifier dans ce qui suit
