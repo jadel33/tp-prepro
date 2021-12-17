@@ -137,11 +137,11 @@ def prochain_univers(univers, DEBUG=False):
 
 
 def iter_univers(univers):
-    """ Fonction qui prends en entrée un univers et 
+    """ Fonction qui prend en entrée un univers et 
         qui retourne un itérateur permettant de 
         générer les univers suivants les uns après 
         les autres, avec en premier l'univers initial"""
-        
+
     univers_suivant = univers
     yield univers_suivant
 
