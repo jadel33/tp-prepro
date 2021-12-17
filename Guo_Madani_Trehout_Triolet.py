@@ -83,13 +83,14 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
     # faciliter le traitement du nombre de voisins
     # lors d'un passage sur une case dite "au bord"
     univers_auxiliaire = ["" for k in range(n)]
+    BORD = "|" # symbole pour identifier les bords de notre univers auxiliaire
 
     for line in range(n):
         ligne_originale = univers[line]
-        univers_auxiliaire[line] = "|" + ligne_originale + "|"
+        univers_auxiliaire[line] = BORD + ligne_originale + BORD
     
-    univers_auxiliaire.insert(0, "|"*(n+2))
-    univers_auxiliaire.insert(n+1, "|"*(n+2))
+    univers_auxiliaire.insert(0, BORD * (n+2))
+    univers_auxiliaire.insert(n+1, BORD * (n+2))
     
     # traitement
     # les indices de la case dont on cherche les voisins
@@ -97,7 +98,7 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
     for i in range(ligne, ligne + 3):
             for j in range(colonne, colonne + 3):
                 case = contenu_cellule(j, i, univers_auxiliaire)
-                if (i != ligne + 1 or j != colonne + 1) and case != "|":
+                if (i != ligne + 1 or j != colonne + 1) and case != BORD:
                     if est_vivante(j, i, univers_auxiliaire):
                         nombre_voisins += 1
     
