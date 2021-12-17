@@ -10,7 +10,7 @@
 
 
 def extrait_ensemble_des_voyelles(mot):
-    """ Fonction prenant en entrée un mot (chaîne de caratères)
+    """ Fonction prenant en entrée un mot (chaîne de caractères)
         et renvoyant l'ensemble des voyelles minuscules présentes
         dans celui-ci. """
     
@@ -58,7 +58,7 @@ def contenu_cellule(colonne, ligne, univers):
 
 
 def est_vivante(colonne, ligne, univers):
-    """ Fonction booléene qui vérifie si une cellule est en vie. """
+    """ Fonction booléenne qui vérifie si une cellule est en vie. """
     return contenu_cellule(colonne, ligne, univers) == "*"
 
 
@@ -78,7 +78,7 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
 
     # création d'un univers auxiliaire de taille
     # n + 2, afin d'étendre l'original 
-    # d'une ligne et colonne au-dessus, et 
+    # d'une ligne et d'une colonne au-dessus, et 
     # d'une ligne et d'une colonne en-dessous afin de
     # faciliter le traitement du nombre de voisins
     # lors d'un passage sur une case dite "au bord"
@@ -121,7 +121,7 @@ def prochain_univers(univers):
             if univers[ligne][colonne] == "_" and voisins == 3:
                 univers_suivant[ligne] += "*"
 
-        # cellule vivante meurt si nombres de voisins différents de 2 ou 3
+        # cellule vivante meurt si nombre de voisins différent de 2 ou 3
             elif univers[ligne][colonne] == "*" and not(voisins in [2,3]):       
                 univers_suivant[ligne] += "_"
         # état de la cellule conservé sinon
