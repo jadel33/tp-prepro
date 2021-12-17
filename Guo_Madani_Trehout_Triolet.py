@@ -104,7 +104,7 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
     return nombre_voisins
 
 
-def prochain_univers(univers, DEBUG=False):
+def prochain_univers(univers):
     """ Fonction qui prend en entrée un univers
         et qui calcule et renvoie l'univers qui 
         suivra """
@@ -141,7 +141,7 @@ def iter_univers(univers):
     yield univers_suivant
 
     while True:
-        univers_suivant = prochain_univers(univers_suivant, DEBUG=False)
+        univers_suivant = prochain_univers(univers_suivant)
         yield univers_suivant
 
 
