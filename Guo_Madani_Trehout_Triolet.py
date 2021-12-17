@@ -110,29 +110,24 @@ def prochain_univers(univers, DEBUG=False):
         suivra """
 
     taille = largeur(univers)
-    if DEBUG: print(f'taille : {taille}')
 
     univers_suivant = ["" for k in range(taille)]
 
     for ligne in range(taille):
         for colonne in range(taille):
             voisins = nombre_cases_vivantes_voisines(colonne, ligne, univers)
-            if DEBUG: print(f'voisins : {voisins}')
 
         # cellule non vivante devient vivante si 3 voisins vivants exactement
             if univers[ligne][colonne] == "_" and voisins == 3:
                 univers_suivant[ligne] += "*"
-                if DEBUG: print(f'if : ')
 
         # cellule vivante meurt si nombres de voisins différents de 2 ou 3
             elif univers[ligne][colonne] == "*" and not(voisins in [2,3]):       
                 univers_suivant[ligne] += "_"
-                if DEBUG: print(f'elif : ')
         # état de la cellule conservé sinon
             else:
                 univers_suivant[ligne] += univers[ligne][colonne]
-                if DEBUG: print(f'else : ')
-            if DEBUG: print('fin traitement case')
+    
     return univers_suivant
 
 
