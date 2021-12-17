@@ -70,8 +70,8 @@ def largeur(univers):
 
 
 def nombre_cases_vivantes_voisines(colonne, ligne, univers):
-    """ Fonction qui renoit ne nombre de voisins vivants
-        d'une case donnée """
+    """ Fonction qui renvoie le nombre de voisins vivants
+        d'une case donnée. """
 
     nombre_voisins = 0
     n = largeur(univers)
@@ -79,8 +79,8 @@ def nombre_cases_vivantes_voisines(colonne, ligne, univers):
     # création d'un univers auxiliaire de taille
     # n + 2, afin d'étendre l'original 
     # d'une ligne et colonne au-dessus, et 
-    # d'une ligne et d'une colonne en dessous afin de
-    # faciliter le traitement du nombres de voisins
+    # d'une ligne et d'une colonne en-dessous afin de
+    # faciliter le traitement du nombre de voisins
     # lors d'un passage sur une case dite "au bord"
     univers_auxiliaire = ["" for k in range(n)]
 
