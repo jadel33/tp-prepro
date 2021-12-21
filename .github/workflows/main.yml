@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Notre script Python
-      run: python Guo_Madani_Trehout_Triolet.py
+      run: python ../Guo_Madani_Trehout_Triolet.py
       shell: sh
