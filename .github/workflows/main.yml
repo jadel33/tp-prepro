@@ -13,5 +13,11 @@ jobs:
     steps:    
     - uses: actions/checkout@v2
     - name: Notre script Python
-      run: python ../Guo_Madani_Trehout_Triolet.py
+      run: |
+            pwd
+            ls
+            cd .
+            pwd
+            ls
+            python ../Guo_Madani_Trehout_Triolet.py
       shell: sh
