@@ -19,5 +19,5 @@ jobs:
             cd .
             pwd
             ls
-            python ../Guo_Madani_Trehout_Triolet.py
+            python Guo_Madani_Trehout_Triolet.py
       shell: sh
